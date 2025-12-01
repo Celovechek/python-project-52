@@ -11,7 +11,7 @@ start:
 	uv run python manage.py runserver 0.0.0.0:8000
 
 render-start:
-	gunicorn hexlet-code.task_manager.wsgi
+	.venv/bin/python -m gunicorn --chdir hexlet-code
 
 build:
 	./build.sh
