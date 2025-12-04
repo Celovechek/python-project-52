@@ -2,3 +2,4 @@
 .python-version
 .idea/
 .venv/
+task_manager/__pycache__/
