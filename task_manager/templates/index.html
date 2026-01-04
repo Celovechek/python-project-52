@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1 class="my-4">{% trans "Welcome!" %}</h1>
+<div class="card">
+  <div class="card-body p-5 bg-light">
+    <div class="display-4">{% trans "Hello, world!" %}</div>
+    <p class="lead">{% trans "Final project" %}</p>
+    <hr>
+    <a class="btn btn-primary btn-lg" href="https://github.com/Celovechek/python-project-52" target="_blank">
+      {% trans "Learn more" %}
+    </a>
+  </div>
+</div>
+{% endblock %}
