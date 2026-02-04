@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<h1>{% block title %}{% if object %}Изменение пользователя{% else %}Регистрация{% endif %}{% endblock %}</h1>
+<form method="post">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <button type="submit" class="btn btn-primary">
+    {% if object %}Сохранить{% else %}Зарегистрировать{% endif %}
+  </button>
+</form>
+{% endblock %}

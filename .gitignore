@@ -3,3 +3,4 @@
 .idea/
 .venv/
 task_manager/__pycache__/
+db.sqlite3
