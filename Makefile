@@ -18,3 +18,6 @@ start:
 
 test:
 	uv run python manage.py test
+
+fixtures:
+	uv run python manage.py dumpdata auth.User --indent 2 > task_manager/fixtures/users.json
