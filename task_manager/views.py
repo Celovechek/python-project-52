@@ -9,6 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView, FormView
 from .forms import CustomUserCreationForm, CustomUserUpdateForm
+from django.views import View
 
 def index(request):
     return render(request, 'index.html')
@@ -72,7 +73,7 @@ class UserLoginView(FormView):
         messages.success(self.request, "Вы залогинены")
         return super().form_valid(form)
 
-class UserLogoutView(LoginRequiredMixin, FormView):
+class UserLogoutView(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         logout(request)
         messages.info(request, "Вы разлогинены")

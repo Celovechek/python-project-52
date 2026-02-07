@@ -4,3 +4,5 @@
 .venv/
 task_manager/__pycache__/
 db.sqlite3
+task_manager/tests/__pycache__/__init__.cpython-313.pyc
+task_manager/tests/__pycache__/test_users.cpython-313.pyc

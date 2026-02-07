@@ -15,3 +15,6 @@ migrate:
 
 start:
 	uv run python manage.py runserver
+
+test:
+	uv run python manage.py test

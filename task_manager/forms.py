@@ -13,7 +13,7 @@ class CustomUserCreationForm(UserCreationForm):
             'username': 'Имя пользователя',
         }
 
-class CustomUserUpdateForm(UserChangeForm):
+class CustomUserUpdateForm(forms.ModelForm):
     password = None
 
     class Meta:
