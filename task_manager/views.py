@@ -10,6 +10,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView, FormView
 from .forms import CustomUserCreationForm, CustomUserUpdateForm
 from django.views import View
+from task_manager.tasks.models import Task
 
 def index(request):
     return render(request, 'index.html')
@@ -55,10 +56,23 @@ class UserDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return self.get_object() == self.request.user
 
     def handle_no_permission(self):
-        messages.error(self.request, "У вас нет прав для удаления другого пользователя.")
+        messages.error(
+            self.request,
+            "У вас нет прав для удаления другого пользователя."
+        )
         return redirect('users_list')
 
     def form_valid(self, form):
+        user = self.get_object()
+
+        # Проверяем, связан ли пользователь с задачами
+        if Task.objects.filter(author=user).exists() or Task.objects.filter(executor=user).exists():
+            messages.error(
+                self.request,
+                "Невозможно удалить пользователя, потому что он используется"
+            )
+            return redirect(self.success_url)
+
         messages.success(self.request, "Пользователь успешно удалён")
         return super().form_valid(form)
 

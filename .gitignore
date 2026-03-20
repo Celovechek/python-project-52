@@ -8,3 +8,13 @@ task_manager/tests/__pycache__/__init__.cpython-313.pyc
 task_manager/tests/__pycache__/test_users.cpython-313.pyc
 task_manager/statuses/__pycache__/
 task_manager/statuses/migrations/__pycache__/
+task_manager/tasks/__pycache__/__init__.cpython-313.pyc
+task_manager/tasks/__pycache__/forms.cpython-313.pyc
+task_manager/tasks/__pycache__/models.cpython-313.pyc
+task_manager/tasks/__pycache__/tests.cpython-313.pyc
+task_manager/tasks/__pycache__/urls.cpython-313.pyc
+task_manager/tasks/__pycache__/views.cpython-313.pyc
+task_manager/tasks/migrations/0001_initial.py
+task_manager/tasks/migrations/__init__.py
+task_manager/tasks/migrations/__pycache__/0001_initial.cpython-313.pyc
+task_manager/tasks/migrations/__pycache__/__init__.cpython-313.pyc

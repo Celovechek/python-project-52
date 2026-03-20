@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="my-4">{{ task.name }}</h1>
+<dl class="row">
+  <dt class="col-sm-3">Описание</dt>
+  <dd class="col-sm-9">{{ task.description|default:"—" }}</dd>
+
+  <dt class="col-sm-3">Статус</dt>
+  <dd class="col-sm-9">{{ task.status.name }}</dd>
+
+  <dt class="col-sm-3">Автор</dt>
+  <dd class="col-sm-9">{{ task.author.username }}</dd>
+
+  <dt class="col-sm-3">Исполнитель</dt>
+  <dd class="col-sm-9">{{ task.executor.username|default:"—" }}</dd>
+
+  <dt class="col-sm-3">Дата создания</dt>
+  <dd class="col-sm-9">{{ task.created_at|date:"d.m.Y H:i" }}</dd>
+</dl>
+
+<a href="{% url 'tasks:tasks_list' %}" class="btn btn-secondary">Назад к списку</a>
+{% endblock %}
